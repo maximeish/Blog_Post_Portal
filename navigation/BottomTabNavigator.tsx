@@ -1,8 +1,3 @@
-/**
- * Learn more about createBottomTabNavigator:
- * https://reactnavigation.org/docs/bottom-tab-navigator
- */
-
 import {
   AntDesign,
   MaterialCommunityIcons,
@@ -11,9 +6,7 @@ import {
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createStackNavigator } from "@react-navigation/stack";
 import * as React from "react";
-import { StyleSheet } from "react-native";
 
-import useColorScheme from "../hooks/useColorScheme";
 import UsersScreen from "../screens/UsersScreen";
 import PostsScreen from "../screens/PostsScreen";
 import CommentsScreen from "../screens/CommentsScreen";
@@ -27,7 +20,6 @@ import {
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
 export default function BottomTabNavigator() {
-  const colorScheme = useColorScheme();
   return (
     <BottomTab.Navigator
       initialRouteName="Users"
@@ -35,10 +27,10 @@ export default function BottomTabNavigator() {
         activeTintColor: "#000",
         style: {
           position: "absolute",
-          bottom: 10,
-          left: 10,
-          right: 10,
-          backgroundColor: "white",
+          bottom: 5,
+          left: 5,
+          right: 5,
+          backgroundColor: "#fff",
           borderRadius: 10,
           height: 80,
           paddingBottom: 15,
@@ -84,15 +76,11 @@ export default function BottomTabNavigator() {
   );
 }
 
-// You can explore the built-in icon families and icons on the web at:
-// https://icons.expo.fyi/
 const TabBarUsersIcon = (props: {
   name: React.ComponentProps<typeof AntDesign>["name"];
   color: string;
 }) => <AntDesign size={30} style={{ marginBottom: -3 }} {...props} />;
 
-// You can explore the built-in icon families and icons on the web at:
-// https://icons.expo.fyi/
 const TabBarPostsIcon = (props: {
   name: React.ComponentProps<typeof MaterialCommunityIcons>["name"];
   color: string;
@@ -100,15 +88,11 @@ const TabBarPostsIcon = (props: {
   <MaterialCommunityIcons size={30} style={{ marginBottom: -3 }} {...props} />
 );
 
-// You can explore the built-in icon families and icons on the web at:
-// https://icons.expo.fyi/
 const TabBarCommentsIcon = (props: {
   name: React.ComponentProps<typeof Fontisto>["name"];
   color: string;
 }) => <Fontisto size={30} style={{ marginBottom: -3 }} {...props} />;
 
-// Each tab has its own navigation stack, you can read more about this pattern here:
-// https://reactnavigation.org/docs/tab-based-navigation#a-stack-navigator-for-each-tab
 const UsersScreenStack = createStackNavigator<UsersScreenParamList>();
 
 function UsersScreenNavigator() {
@@ -150,16 +134,3 @@ function CommentsScreenNavigator() {
     </CommentsScreenStack.Navigator>
   );
 }
-
-// const styles = StyleSheet.create({
-//   shadow: {
-//     shadowColor: "#7F5DF0",
-//     shadowOffset: {
-//       width: 0,
-//       height: 10,
-//     },
-//     shadowOpacity: 0.15,
-//     shadowRadius: 2,
-//     elevation: 5,
-//   },
-// });

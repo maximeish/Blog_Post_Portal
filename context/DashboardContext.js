@@ -31,6 +31,9 @@ const dashboardStore = {
       body: "This is a test comment2",
     },
   ],
+  selectedUser: null,
+  selectedPost: null,
+  selectedComment: null,
 };
 
 export const DashboardContext = createContext(dashboardStore);

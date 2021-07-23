@@ -1,9 +1,3 @@
-/**
- * Learn more about deep linking with React Navigation
- * https://reactnavigation.org/docs/deep-linking
- * https://reactnavigation.org/docs/configuring-links
- */
-
 import * as Linking from "expo-linking";
 
 export default {
@@ -14,17 +8,17 @@ export default {
         screens: {
           Users: {
             screens: {
-              UsersScreen: "users",
+              UsersScreen: "Users",
             },
           },
           Posts: {
             screens: {
-              PostsScreen: "posts",
+              PostsScreen: "Posts",
             },
           },
           Comments: {
             screens: {
-              CommentsScreen: "comments",
+              CommentsScreen: "Comments",
             },
           },
         },
